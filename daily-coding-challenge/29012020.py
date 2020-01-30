@@ -5,7 +5,7 @@ which serializes the tree into a string, and deserialize(s),
 which deserializes the string back into the tree.
 
 """
-
+# could not do it get solution from the internet
 class Node:
     def __init__(self, val, left=None, right=None):
         self.val = val
