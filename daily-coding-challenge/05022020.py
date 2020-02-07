@@ -18,13 +18,9 @@ def solution(groupSize):
             group_dict[size] = (group_dict[size][0], group_dict[size][1]+1)
 
         group[group_dict[size]].append(person_id)
-        # if size in group_dict.keys():
-        #     group_dict[size].append(person_id)
-        # else:
-        #     group_dict[size] = [person_id]
 
     return list(group.values())
-    # return list(group_dict.values())
+
 
 groupSize = [3,3,3,3,3,1,3]
 print(solution(groupSize))
