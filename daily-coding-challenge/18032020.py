@@ -9,14 +9,35 @@ prices = [7,1,5,3,6,4]
 
 #Brute Force
 def solution(prices):
-    profit = []
+    profit = 0
     for i in range(len(prices)):
         for j in range(len(prices)):
-            if i < j:
-                profit.append(prices[j]-prices[i])
-    if len(profit) > 0 and max(profit) > 0:
-        return max(profit)
-    else:
-        return 0
+            if i < j and prices[j]-prices[i] > profit:
+                profit = prices[j]-prices[i]
+    return profit
 
-print(solution(prices))
+def solution2(prices):
+    min_price = 99999999
+    profit = 0
+    for i in range(len(prices)):
+        if prices[i] < min_price:
+            min_price = prices[i]
+        elif prices[i] - min_price > profit:
+            profit = prices[i] - min_price
+    return profit
+
+#DP
+def solution3(prices):
+    min_price = 999999
+    profit = 0
+    for price in prices:
+        min_price = min(min_price,price)
+        profit = max(profit, price-min_price)
+    return profit
+
+
+
+
+
+
+print(solution3(prices))
