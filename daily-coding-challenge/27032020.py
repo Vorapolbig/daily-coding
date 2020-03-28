@@ -28,5 +28,15 @@ def solution(left,right):
                 output.append(number)
     return output
 
+def solution2(left,right):
+    output = []
+    for number in range(left,right+1,1):
+        for id, i in enumerate(str(number)):
+            if int(i) == 0 or number % int(i) != 0:
+                break
+            if id == len(str(number))-1:
+                output.append(number)
+    return output
 
-print(solution(1,22))
+
+print(solution2(1,22))
