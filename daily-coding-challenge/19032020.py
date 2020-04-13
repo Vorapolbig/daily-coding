@@ -36,6 +36,7 @@ def solution(prices):
 
 # valley and peak
 def solution2(prices):
+    if len(prices) == 0: return 0
     i = 0
     valley,peak = prices[0],prices[0]
     profit = 0
